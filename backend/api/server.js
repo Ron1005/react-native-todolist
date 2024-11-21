@@ -86,3 +86,7 @@ app.post('/updatetodo',async(req,res)=>{
 app.listen(3001,()=>{
     console.log("App is listening on Port 3001")
 })
+
+// Export the app as a serverless function
+module.exports = app;
+module.exports.handler = serverless(app);
