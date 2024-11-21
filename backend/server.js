@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/api/gettodos',async (req,res)=>{
+app.get('/gettodos',async (req,res)=>{
     const database = client.db('ToDodatabase');
     const listings = database.collection('ToDoCollection');
     const sample_data = listings.find()
@@ -83,10 +83,7 @@ app.post('/updatetodo',async(req,res)=>{
     }
 })
 
+const PORT = process.env.PORT || 3000
 app.listen(3001,()=>{
     console.log("App is listening on Port 3001")
 })
-
-// Export the app as a serverless function
-module.exports = app;
-module.exports.handler = serverless(app);
