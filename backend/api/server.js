@@ -16,7 +16,7 @@ app.get('/',(req,res)=>{
     })
 })
 
-app.get('/gettodos',async (req,res)=>{
+app.get('/api/gettodos',async (req,res)=>{
     const database = client.db('ToDodatabase');
     const listings = database.collection('ToDoCollection');
     const sample_data = listings.find()
